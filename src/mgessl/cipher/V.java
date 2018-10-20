@@ -15,6 +15,8 @@ public class V extends JFrame {
 	private JPanel inputOutput;
 	private JRadioButton rb1;
 	private JRadioButton rb2;
+	private JRadioButton rb3;
+	private JRadioButton rb4;
 	private ButtonGroup radioGroup;
 	private JTextField inputSettings;
 	private JLabel settingLabel;
@@ -37,26 +39,34 @@ public class V extends JFrame {
 		this.f.setResizable(false);
 		this.f.setLocationRelativeTo(null);
 		this.f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		this.f.setSize(300, 300);
+		this.f.setSize(400, 300);
 		this.f.setLayout(new BoxLayout(this.f.getContentPane(), BoxLayout.Y_AXIS));
 		
 		this.rb1 = new JRadioButton("Substitution", true);
-		this.rb2 = new JRadioButton("ShiftCipher");
+		this.rb2 = new JRadioButton("Shift");
+		this.rb3 = new JRadioButton("Keyword");
+		this.rb4 = new JRadioButton("Transposition");
 		this.rb1.addActionListener(this.c1);
 		this.rb2.addActionListener(this.c1);
+		this.rb3.addActionListener(this.c1);
+		this.rb4.addActionListener(this.c1);
 		this.radioGroup = new ButtonGroup();
 		this.radioGroup.add(this.rb1);
 		this.radioGroup.add(this.rb2);
+		this.radioGroup.add(this.rb3);
+		this.radioGroup.add(this.rb4);
 		this.selection = new JPanel();
 		this.selection.setBorder(BorderFactory.createTitledBorder("Method"));
 		this.selection.add(this.rb1);
 		this.selection.add(this.rb2);
-		this.selection.setMaximumSize(new Dimension(300, 70));
+		this.selection.add(this.rb3);
+		this.selection.add(this.rb4);
+		this.selection.setMaximumSize(new Dimension(400, 70));
 		
 		
 		this.settings = new JPanel();
 		this.settings.setBorder(BorderFactory.createTitledBorder("Settings"));
-		this.settings.setMaximumSize(new Dimension(300, 150));
+		this.settings.setMaximumSize(new Dimension(400, 150));
 		this.settings.setLayout(new GridLayout(2, 1));
 		this.settingLabel = new JLabel("Values: ");
 		this.inputSettings = new JTextField();
@@ -141,11 +151,25 @@ public class V extends JFrame {
 		return this.rb1.isSelected();
 	}
 	/**
-	 * Prüft ob rb1 selcted ist 
+	 * Prüft ob rb2 selcted ist 
 	 * @return boolean
 	 */
 	public boolean isRb2Selected() {
 		return this.rb2.isSelected();
+	}
+	/**
+	 * Prüft ob rb3 selcted ist 
+	 * @return boolean
+	 */
+	public boolean isRb3Selected() {
+		return this.rb3.isSelected();
+	}
+	/**
+	 * Prüft ob rb4 selcted ist 
+	 * @return boolean
+	 */
+	public boolean isRb4Selected() {
+		return this.rb4.isSelected();
 	}
 	/**
 	 * Gibt den Output an den Benutzter zurück

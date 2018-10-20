@@ -1,9 +1,13 @@
 package mgessl.cipher;
-
-public class KeywordChipher extends MonoAlphabeticCipher{
+/**
+ * Verschlüsselt mit einem Keyword
+ * @author micha
+ * @version 20.10.2018
+ */
+public class KeywordCipher extends MonoAlphabeticCipher{
 	private int countr;
 	private String s;
-	public KeywordChipher(String text) {
+	public KeywordCipher(String text) {
 		this.s="ABCDEFGHIJKLMNOPQRSTUVWXYZÄÖÜß";
 		setKeyword(text);
 		String ausgabe="";
@@ -15,14 +19,16 @@ public class KeywordChipher extends MonoAlphabeticCipher{
 			}
 		}
 		super.setSecretAlphabet(ausgabe);
-		System.out.println(this.countr);
 	}
-	
+	/**
+	 * Set für das Keyword
+	 * @param inumb
+	 */
 	public void setKeyword(String text) {
 		this.countr=text.length()+s.indexOf(text.charAt(0)+1);
 	}
 	public static void main(String[] args) {
-		 KeywordChipher k=new  KeywordChipher("Servus");
+		 KeywordCipher k=new  KeywordCipher("Servus");
 		 System.out.println(k.encrypt("ABC"));
 	}
 }

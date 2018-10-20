@@ -1,15 +1,28 @@
 package mgessl.cipher;
-
+/**
+ * Verschlüsselt mit verschiedenen Ebenen
+ * @author micha
+ * @version 20.10.2018
+ */
 public class TranspositionCipher implements Cipher{
 	private int lvl;
 	public TranspositionCipher(int numb) {
 		 setTranspositionLevel(numb);
 	}
+	/**
+	 * Set für der Ebenen
+	 * @param inumb
+	 */
 	public void setTranspositionLevel(int numb) {
 		if (numb<5 && numb>1) {
 			this.lvl=numb;
 		}
 	}
+	/**
+	 * Verschlüsselt den Text
+	 * @param String
+	 * @return String
+	 */
 	public String encrypt(String text) {
 		if (this.lvl<5 && this.lvl>1) {
 			text.toUpperCase();
@@ -62,7 +75,11 @@ public class TranspositionCipher implements Cipher{
 		}
 		return "";
 	}
-	
+	/**
+	 * Entschlüsselt den Text
+	 * @param String
+	 * @return String
+	 */
 	public String decrypt(String text) {
 			text.toUpperCase();
 			

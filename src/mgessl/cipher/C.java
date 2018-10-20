@@ -24,6 +24,12 @@ public class C implements ActionListener{
 				if (v1.isRb2Selected()) {
 					m1.checkShift(v1.getInputSettingText());
 				}
+				if (v1.isRb3Selected()) {
+					m1.checkKey(v1.getInputSettingText());
+				}
+				if (v1.isRb4Selected()) {
+					m1.checkTrans(v1.getInputSettingText());
+				}
 			}
 			
 		}
@@ -36,6 +42,14 @@ public class C implements ActionListener{
 				m1.enShift(v1.getInputText());
 				v1.refresh();
 			}
+			if (v1.isRb3Selected()) {
+				m1.enKey(v1.getInputText());
+				v1.refresh();
+			}
+			if (v1.isRb4Selected()) {
+				m1.enTrans(v1.getInputText());
+				v1.refresh();
+			}
 		}
 		if (v1.isDecrypt(e)) {
 			if (v1.isRb1Selected()) {
@@ -44,6 +58,14 @@ public class C implements ActionListener{
 			}
 			if (v1.isRb2Selected()) {
 				m1.deShift(v1.getInputText());
+				v1.refresh();
+			}
+			if (v1.isRb3Selected()) {
+				m1.deKey(v1.getInputText());
+				v1.refresh();
+			}
+			if (v1.isRb4Selected()) {
+				m1.deTrans(v1.getInputText());
 				v1.refresh();
 			}
 		}
